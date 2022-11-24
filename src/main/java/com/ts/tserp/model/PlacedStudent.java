@@ -49,7 +49,7 @@ public class PlacedStudent {
 		public String getCompany_name() {
 			return company_name;
 		}
-		public void setCompany_name(String company_name) {
+				public void setCompany_name(String company_name) {
 			this.company_name = company_name;
 		}
 		public String getEmailId() {
@@ -69,6 +69,12 @@ public class PlacedStudent {
 		}
 		public void setPosition(String position) {
 			this.position = position;
+		}
+		@Override
+		public String toString() {
+			return "PlacedStudent [id=" + id + ", student_name=" + student_name + ", company_name=" + company_name
+					+ ", emailId=" + emailId + ", phone_no=" + phone_no + ", position=" + position + ", salary="
+					+ salary + "]";
 		}
 		
 		
