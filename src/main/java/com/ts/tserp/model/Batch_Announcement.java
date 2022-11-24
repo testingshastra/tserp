@@ -18,8 +18,8 @@ public class Batch_Announcement {
 	private int id;
 	private String course_title;
 	
-	@Temporal(TemporalType.DATE)
-	private Date start_date;
+
+	private String start_date;
 	
 	
 	private double start_time;
@@ -39,10 +39,10 @@ public class Batch_Announcement {
 	public void setCourse_title(String course_title) {
 		this.course_title = course_title;
 	}
-	public Date getStart_date() {
+	public String getStart_date() {
 		return start_date;
 	}
-	public void setStart_date(Date start_date) {
+	public void setStart_date(String start_date) {
 		this.start_date = start_date;
 	}
 	public double getStart_time() {
@@ -63,6 +63,9 @@ public class Batch_Announcement {
 	public void setTrainer_name(String trainer_name) {
 		this.trainer_name = trainer_name;
 	}
+	
+	
+	
 	
 	
 
