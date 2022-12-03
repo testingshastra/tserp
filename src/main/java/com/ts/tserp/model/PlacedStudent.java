@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.sun.istack.NotNull;
 
 @Entity(name="Recent placement")
 public class PlacedStudent {
@@ -16,7 +15,7 @@ public class PlacedStudent {
 		private int id;
 	
 	
-	@NotNull
+
 	@Column(name = "Student_name")
 	
 		private String student_name;
@@ -26,7 +25,7 @@ public class PlacedStudent {
 	
 	    private int salary;
      
-     @NotNull  
+     
 	    private  int phone_number;
 	
 		private String position;
