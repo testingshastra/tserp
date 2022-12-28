@@ -25,19 +25,18 @@ public class TserpApplication {
 		return new BCryptPasswordEncoder();
 	}
 	
-	@Bean
-	CommandLineRunner run(UserService userService) {
-		return args -> {
-			userService.saveRole(new Role(null, "ROLE_USER"));
-			userService.saveRole(new Role(null, "ROLE_ADMIN"));
-			userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
-			
-			userService.saveUser(new User(null, "Admin", "admin", "Test@123", new ArrayList<>()));
-			userService.saveUser(new User(null, "User", "user", "Test@123", new ArrayList<>()));
-			
-			userService.addRoleToUser("admin",  "ROLE_ADMIN");
-			userService.addRoleToUser("admin",  "ROLE_SUPER_ADMIN");
-		};
-	}
+	/*
+	 * @Bean CommandLineRunner run(UserService userService) { return args -> {
+	 * userService.saveRole(new Role(null, "ROLE_USER")); userService.saveRole(new
+	 * Role(null, "ROLE_ADMIN")); userService.saveRole(new Role(null,
+	 * "ROLE_SUPER_ADMIN"));
+	 * 
+	 * userService.saveUser(new User(null, "Admin", "admin", "Test@123", new
+	 * ArrayList<>())); userService.saveUser(new User(null, "User", "user",
+	 * "Test@123", new ArrayList<>()));
+	 * 
+	 * userService.addRoleToUser("admin", "ROLE_ADMIN");
+	 * userService.addRoleToUser("admin", "ROLE_SUPER_ADMIN"); }; }
+	 */
 
 }
