@@ -1,11 +1,17 @@
 package com.ts.tserp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ts.tserp.model.BatchAnnouncement;
@@ -26,8 +32,18 @@ public class BatchAnnouncementController {
 		return batchAnnouncementService.save(batch);
 	}
 	
-	@GetMapping("/get_Batch/{Id}")
-	private BatchAnnouncement getBatchById(@PathVariable long id) {
+	@GetMapping("/get_batches/{id}")
+	private BatchAnnouncement getBatchById(@PathVariable("id") Long id) {
 		return batchAnnouncementService.getBatchById(id);
+	}
+	
+	@GetMapping("/getBatches")
+	private List<BatchAnnouncement> getBatches() {
+		return batchAnnouncementService.getAllBatches();
+	}
+	
+	@DeleteMapping("/deleteBatch/{id}")
+	private String deleteBatch(@PathVariable Long id) {
+		return batchAnnouncementService.deleteBatch(id);
 	}
 }

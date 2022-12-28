@@ -1,5 +1,7 @@
 package com.ts.tserp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +18,18 @@ public class BatchAnnouncementService {
 		return batchAnnouncementRepo.save(batch);
 	}
 
-	public BatchAnnouncement getBatchById(long id) {
+	public BatchAnnouncement getBatchById(Long id) {
 		return batchAnnouncementRepo.findById(id).orElse(null);
+		
+	}
+
+	public List<BatchAnnouncement> getAllBatches() {
+		return (List<BatchAnnouncement>) batchAnnouncementRepo.findAll();
+	}
+
+	public String deleteBatch(Long id) {
+		batchAnnouncementRepo.deleteById(id);
+		return "Batch "+id+" has been deleted";
 	}
 	
 }
