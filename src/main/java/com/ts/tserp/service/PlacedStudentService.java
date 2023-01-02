@@ -1,5 +1,7 @@
 package com.ts.tserp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,10 @@ public class PlacedStudentService {
 
 	public PlacedStudent getPlacedStudent(long id) {
 		return placedStudentRepo.findById(id).orElse(null);
+	}
+
+	public List<PlacedStudent> getAllPlacedStudents() {
+		return (List<PlacedStudent>)placedStudentRepo.findAll();
 	}
 
 	

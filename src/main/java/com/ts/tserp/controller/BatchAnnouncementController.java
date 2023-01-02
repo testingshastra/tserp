@@ -27,22 +27,22 @@ public class BatchAnnouncementController {
 	@Autowired
 	private BatchAnnouncementService batchAnnouncementService;
 	
-	@PostMapping("/add_batch")
+	@PostMapping("/add_batch_announcement")
 	private BatchAnnouncement addBatch(@RequestBody BatchAnnouncement batch) {
 		return batchAnnouncementService.save(batch);
 	}
 	
-	@GetMapping("/get_batches/{id}")
+	@GetMapping("/get_batch_announcement/{id}")
 	private BatchAnnouncement getBatchById(@PathVariable("id") Long id) {
 		return batchAnnouncementService.getBatchById(id);
 	}
 	
-	@GetMapping("/getBatches")
+	@GetMapping("/get_batch_announcements")
 	private List<BatchAnnouncement> getBatches() {
 		return batchAnnouncementService.getAllBatches();
 	}
 	
-	@DeleteMapping("/deleteBatch/{id}")
+	@DeleteMapping("/delete_batch_announcement/{id}")
 	private String deleteBatch(@PathVariable Long id) {
 		return batchAnnouncementService.deleteBatch(id);
 	}
