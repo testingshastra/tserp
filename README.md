@@ -21,6 +21,19 @@ To deploy this project run the "TserpApplication.java"
 
 ### Batch Announcement API
 
+JSON payload for adding batch annuncement. 
+
+```bash
+ {
+    "course_title":"Full Stack Developement",
+    "start_date":"2023-01-01",
+    "start_time":"7.30",
+    "mode":"Hybrid",
+    "trainer_name":"Vinod Borse"
+}
+```
+`
+
 #### Post Batch Announcement
 
 ```http
@@ -65,6 +78,15 @@ To deploy this project run the "TserpApplication.java"
 
 
 ### Recent Placement/Placed Student API
+JSON payload for adding placed student. 
+
+```bash
+ {
+    "studentName":"Mahesh Gavhane",
+    "ctc":"6800000"
+}
+```
+
 
 #### Post a Placed Student
 
